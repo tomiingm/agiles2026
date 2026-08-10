@@ -6,6 +6,12 @@ class Calculadora {
 }
 }
 
+function testSumarStringVacio() {
+    numeros = "";
+    const calc = new Calculadora();
+    const resultado = calc.sumar(numeros);
+    assert.strictEqual(resultado, 0);
+}
 
 function testSumarCeroMasCero() {
     numeros = "0,0";
@@ -28,6 +34,7 @@ function testSumarUnoMasUnoMasUno() {
     assert.strictEqual(resultado, 3);
 }
 
+testSumarStringVacio();
 testSumarCeroMasCero();
 testSumarCeroMasUno();
 testSumarUnoMasUnoMasUno();

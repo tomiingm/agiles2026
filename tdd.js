@@ -27,5 +27,13 @@ function testSumarCeroMasUno() {
     assert.strictEqual(resultado, 1);
 }
 
+function testSumarUnoMasUnoMasUno() {
+    numeros = "1,1,1";
+    const calc = new Calculadora();
+    const resultado = calc.sumar(numeros);
+    assert.strictEqual(resultado, 3);
+}
+
 testSumarCeroMasCero();
 testSumarCeroMasUno();
+testSumarUnoMasUnoMasUno();

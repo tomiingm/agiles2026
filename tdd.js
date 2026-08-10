@@ -1,7 +1,8 @@
 const assert = require('assert');
 
 class Calculadora {
-    sumar(a, b) {
+    sumar(numeros) {
+        const [a, b] = numeros.split(',').map(Number);
         if (a === 0 && b === 0) {
             return 0;
     }
@@ -13,18 +14,16 @@ class Calculadora {
 
 
 function testSumarCeroMasCero() {
-    numero1 = 0;
-    numero2 = 0;
+    numeros = "0,0";
     const calc = new Calculadora();
-    const resultado = calc.sumar(numero1, numero2);
+    const resultado = calc.sumar(numeros);
     assert.strictEqual(resultado, 0);
 }
 
 function testSumarCeroMasUno() {
-    numero1 = 0;
-    numero2 = 1;
+    numeros = "0,1";
     const calc = new Calculadora();
-    const resultado = calc.sumar(numero1, numero2);
+    const resultado = calc.sumar(numeros);
     assert.strictEqual(resultado, 1);
 }
 
